@@ -27,15 +27,15 @@ public class Clock : MonoBehaviour
         {
             float secs = DateTime.Now.Second;
             float secsXRotation = (secs / 60f) * 360f;
-            secondsHand.transform.rotation = Quaternion.Euler(0, 0, -secsXRotation);
+            secondsHand.transform.rotation = Quaternion.Euler( secsXRotation, 0, 0);
 
             float mins = DateTime.Now.Minute;
             float minsXRotation = (mins / 60f) * 360f;
-            minuteHand.transform.rotation = Quaternion.Euler(0, 0, -minsXRotation);
+            minuteHand.transform.rotation = Quaternion.Euler( minsXRotation, 0, 0);
 
             float hrs = DateTime.Now.Hour % 12;
             float hrsXRotation = (hrs / 12f) * 360f + (mins / 60f) * 30f;
-            hourHand.transform.rotation = Quaternion.Euler(0, 0, -hrsXRotation);
+            hourHand.transform.rotation = Quaternion.Euler( hrsXRotation, 0, 0);
 
             lastSecond = currentSecond;
         }
